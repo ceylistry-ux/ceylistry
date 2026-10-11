@@ -1,0 +1,20 @@
+import type { Artist, Artwork, Category } from '../types'
+export const categories: Category[] = ['Illustrations','Paintings','Prints','Original art','Commissions']
+export const artists: Artist[] = [
+ {slug:'maya-perera',name:'Maya Perera',location:'Colombo, Sri Lanka',bio:'Maya makes playful, sun-drenched illustrations inspired by the small rituals and vivid colours of everyday life.',portrait:'/art/portrait-maya.svg',discipline:'Illustration',featured:true,demo:true},
+ {slug:'nilan-fernando',name:'Nilan Fernando',location:'Galle, Sri Lanka',bio:'Working in layered acrylic and ink, Nilan paints imagined landscapes that feel both familiar and a little otherworldly.',portrait:'/art/portrait-nilan.svg',discipline:'Painting',demo:true},
+ {slug:'amara-jay',name:'Amara Jay',location:'Kandy, Sri Lanka',bio:'Amara’s botanical prints celebrate the unruly beauty of plants, gardens and the natural world.',portrait:'/art/portrait-amara.svg',discipline:'Printmaking',demo:true},
+ {slug:'sahan-de-silva',name:'Sahan de Silva',location:'Negombo, Sri Lanka',bio:'Sahan creates bold, thoughtful compositions that find wonder in the shapes and textures around us.',portrait:'/art/portrait-sahan.svg',discipline:'Mixed media',demo:true},
+]
+export const artworks: Artwork[] = [
+ {slug:'little-afternoons',title:'Little Afternoons',artistSlug:'maya-perera',category:'Illustrations',type:'Print',price:8500,image:'/art/little-afternoons.svg',description:'A little reminder to take the long way home. Printed on archival cotton paper with a soft, tactile finish.',medium:'Archival art print',dimensions:'A3 · 29.7 × 42 cm',commission:true},
+ {slug:'where-the-light-goes',title:'Where the Light Goes',artistSlug:'nilan-fernando',category:'Paintings',type:'Original',price:48500,image:'/art/light-goes.svg',description:'A quiet landscape painted from memory, where the last light of day settles over a distant shoreline.',medium:'Acrylic and oil pastel on canvas',dimensions:'40 × 50 cm',commission:false},
+ {slug:'garden-in-blue',title:'Garden in Blue',artistSlug:'amara-jay',category:'Prints',type:'Print',price:6200,image:'/art/garden-blue.svg',description:'Layered leaves, imaginary blooms and all the blues of a secret garden.',medium:'Two-colour risograph print',dimensions:'A4 · 21 × 29.7 cm',commission:true},
+ {slug:'forms-at-rest',title:'Forms at Rest',artistSlug:'sahan-de-silva',category:'Original art',type:'Original',price:36000,image:'/art/forms-rest.svg',description:'A study of balance and imperfect geometry, built up with warm pigments and hand-drawn lines.',medium:'Acrylic and pencil on board',dimensions:'30 × 40 cm',commission:false},
+ {slug:'soft-place-to-land',title:'A Soft Place to Land',artistSlug:'maya-perera',category:'Illustrations',type:'Digital',price:4200,image:'/art/soft-place.svg',description:'A playful illustrated moment of pause, available as a high-resolution digital download.',medium:'Digital illustration',dimensions:'Digital file · 300 dpi',commission:true},
+ {slug:'after-the-rain',title:'After the Rain',artistSlug:'nilan-fernando',category:'Paintings',type:'Original',price:52000,image:'/art/after-rain.svg',description:'The stillness just after rain, captured in a painterly mix of colour, texture and memory.',medium:'Acrylic on canvas',dimensions:'45 × 60 cm',commission:true},
+ {slug:'wild-things-no-2',title:'Wild Things, No. 2',artistSlug:'amara-jay',category:'Prints',type:'Print',price:7000,image:'/art/wild-things.svg',description:'A lively hand-pulled print celebrating plants with a mind of their own.',medium:'Hand-pulled linocut',dimensions:'A3 · 29.7 × 42 cm',commission:false},
+ {slug:'small-worlds',title:'Small Worlds',artistSlug:'sahan-de-silva',category:'Original art',type:'Original',price:29500,image:'/art/small-worlds.svg',description:'A colour-rich abstract work about finding entire worlds in the smallest details.',medium:'Mixed media on paper',dimensions:'35 × 45 cm',commission:true},
+]
+export const artistFor = (slug:string) => artists.find(a=>a.slug===slug)
+
