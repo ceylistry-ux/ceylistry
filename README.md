@@ -18,6 +18,7 @@ The browser only uses the Supabase publishable key. Never put a Supabase secret 
 - Approved profiles and artwork load from Supabase; the local demo collection appears when the project has no approved content.
 - Artist sign-in uses Supabase passwordless email links at `/studio`.
 - Signed-in artists can submit a profile and artwork image for review. New or edited submissions are not public until approved.
+- Artists can correct and resubmit profiles and artwork after review; edits to approved content return it to review.
 - No checkout, payment, payout, or buyer enquiry submission is enabled.
 
 ## Supabase
