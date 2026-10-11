@@ -4,7 +4,7 @@ Ceylistry is configured to use a Supabase URL and publishable key through the va
 
 Connected project: `knwzeqiofncldelqvsvt` (Singapore region, project is healthy).
 
-The initial schema is deployed to this project. It creates artist profiles and artwork listings with review states, a private enquiries table, an images bucket with access policies, and explicit Data API grants. The current connection account is the Ceylistry Supabase account. The local `.env.local` holds only the public publishable key and is ignored by Git.
+The schema and five tracked migrations are deployed to this project. They create artist profiles and artwork listings with review states, private enquiries and rate-limit data, an images bucket with access policies, and explicit Data API grants. The `submit-enquiry` Edge Function is deployed; it requires Turnstile and origin secrets before it accepts requests. The current connection account is the Ceylistry Supabase account. The local `.env.local` holds only public browser configuration and is ignored by Git.
 
 ## Initial schema outline
 
@@ -15,7 +15,7 @@ The initial schema is deployed to this project. It creates artist profiles and a
 
 All exposed tables will have RLS. Because Supabase is changing default Data API exposure for new tables, grants will be explicit and least-privilege. Admin approval is performed through a controlled server-side/admin workflow, never by trusting editable user metadata or a client-provided role.
 
-`schema.sql` documents the consolidated deployed schema. The files in `migrations/` match the three migration versions already applied to the project. The Supabase CLI could not be installed in this environment, so future migrations have not been pushed through the CLI here; use the Supabase CLI once available, and keep new timestamped files in `migrations/` under source control.
+`schema.sql` documents the consolidated deployed schema. The files in `migrations/` match the migration versions applied to the project. The Supabase CLI could not be installed in this environment, so migrations were applied through the connected Supabase project integration; use the CLI once available to reconcile local migration history before adopting CLI-based deployment.
 
 The artist studio uses passwordless email links and redirects to `/studio`. Add the local Vite origin (for example `http://localhost:5173/**`) to Supabase Auth's redirect URL allowlist before testing sign-in. Add the eventual production URL after choosing a domain.
 
